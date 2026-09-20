@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Adaniq Media | Video Editing • Design • Social Media</title>
+
+  <meta name="description" content="Adaniq Media helps brands grow through professional video editing, graphic design and social media management.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #05070d;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(5, 7, 13, 0.85);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #159cff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #cbd5e1;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #159cff;
+    }
+
+    .nav-btn {
+      background: #159cff;
+      color: white !important;
+      padding: 11px 18px;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 75px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: #087eff;
+      filter: blur(180px);
+      opacity: 0.18;
+      right: -150px;
+      top: 100px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tag {
+      display: inline-block;
+      color: #159cff;
+      border: 1px solid rgba(21,156,255,0.4);
+      background: rgba(21,156,255,0.08);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 90px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #159cff;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #aeb8c7;
+      font-size: 19px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #159cff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(21,156,255,0.25);
+    }
+
+    .btn-outline {
+      border: 1px solid #334155;
+      color: #dbe4ef;
+    }
+
+    .btn-outline:hover {
+      border-color: #159cff;
+      color: #159cff;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title small {
+      color: #159cff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      margin-top: 10px;
+    }
+
+    .section-title p {
+      color: #94a3b8;
+      max-width: 600px;
+      margin: 12px auto 0;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #080b12;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #0d111a, #080b11);
+      border: 1px solid #1d2635;
+      border-radius: 22px;
+      padding: 32px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #159cff;
+    }
+
+    .icon {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(21,156,255,0.1);
+      border: 1px solid rgba(21,156,255,0.2);
+      border-radius: 15px;
+      font-size: 25px;
+      margin-bottom: 22px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #94a3b8;
+      font-size: 15px;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      height: 260px;
+      border-radius: 20px;
+      border: 1px solid #202b3b;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, #101827, #06101b);
+    }
+
+    .project:nth-child(2) {
+      background: linear-gradient(135deg, #111827, #082238);
+    }
+
+    .project:nth-child(3) {
+      background: linear-gradient(135deg, #0d1725, #031625);
+    }
+
+    .project-content {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 25px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    }
+
+    .project-content span {
+      color: #159cff;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .project-content h3 {
+      margin-top: 5px;
+      font-size: 20px;
+    }
+
+    /* WHY US */
+
+    .why {
+      background: #080b12;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .why-box {
+      padding: 25px;
+      border-left: 2px solid #159cff;
+      background: #0c111a;
+      border-radius: 10px;
+    }
+
+    .why-box h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .why-box p {
+      color: #8996a8;
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(21,156,255,0.15), transparent 55%);
+    }
+
+    .cta h2 {
+      font-size: clamp(35px, 6vw, 60px);
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #94a3b8;
+      margin-bottom: 30px;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      max-width: 800px;
+      margin: auto;
+      background: #0c111a;
+      border: 1px solid #1e293b;
+      border-radius: 25px;
+      padding: 45px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-size: 35px;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: #94a3b8;
+      margin-bottom: 25px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .contact-info a {
+      padding: 12px 18px;
+      border: 1px solid #263244;
+      border-radius: 10px;
+      color: #cbd5e1;
+    }
+
+    .contact-info a:hover {
+      border-color: #159cff;
+      color: #159cff;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #18202c;
+      padding: 30px 0;
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #ffffff;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .service-grid,
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      section {
+        padding: 75px 0;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        padding: 30px 20px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        ADANIQ<span>MEDIA</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a class="nav-btn" href="mailto:adaniqmedia@gmail.com">
+            Let's Talk
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="tag">
+          CREATIVE DIGITAL AGENCY
+        </div>
+
+        <h1>
+          Your Vision.<br>
+          <span>Our Creativity.</span>
+        </h1>
+
+        <p>
+          We help brands build a powerful digital presence through
+          professional video editing, graphic design and social media
+          management.
+        </p>
+
+        <div class="buttons">
+          <a href="#contact" class="btn btn-primary">
+            Start a Project →
+          </a>
+
+          <a href="#portfolio" class="btn btn-outline">
+            View Portfolio
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section class="services" id="services">
+
+    <div class="container">
+
+      <div class="section-title">
+        <small>What We Do</small>
+        <h2>Our Services</h2>
+        <p>
+          Creative solutions designed to make your brand stand out
+          online.
+        </p>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="card">
+          <div class="icon">🎬</div>
+          <h3>Video Editing</h3>
+          <p>
+            Engaging reels, shorts, promotional videos and social
+            media content that keeps your audience watching.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎨</div>
+          <h3>Graphic Design</h3>
+          <p>
+            Professional posters, social media creatives, thumbnails,
+            banners and visual content for your brand.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📱</div>
+          <h3>Social Media</h3>
+          <p>
+            Complete social media handling, content planning,
+            posting and creative management to grow your presence.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PORTFOLIO -->
+
+  <section id="portfolio">
+
+    <div class="container">
+
+      <div class="section-title">
+        <small>Our Work</small>
+        <h2>Selected Projects</h2>
+        <p>
+          A glimpse of the creative work we can create for brands.
+        </p>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <div class="project">
+          <div class="project-content">
+            <span>Video Editing</span>
+            <h3>Social Media Reels</h3>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-content">
+            <span>Graphic Design</span>
+            <h3>Brand Social Creatives</h3>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-content">
+            <span>Social Media</span>
+            <h3>Content Management</h3>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- WHY US -->
+
+  <section class="why" id="why">
+
+    <div class="container">
+
+      <div class="section-title">
+        <small>Why Adaniq Media</small>
+        <h2>Built For Your Brand</h2>
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-box">
+          <h3>⚡ Fast Delivery</h3>
+          <p>
+            We respect deadlines and aim to deliver projects on time.
+          </p>
+        </div>
+
+        <div class="why-box">
+          <h3>✨ Premium Quality</h3>
+          <p>
+            Every creative is designed with attention to detail.
+          </p>
+        </div>
+
+        <div class="why-box">
+          <h3>💡 Creative Ideas</h3>
+          <p>
+            Fresh concepts that help your content stand apart.
+          </p>
+        </div>
+
+        <div class="why-box">
+          <h3>🤝 Dedicated Support</h3>
+          <p>
+            Clear communication and support throughout your project.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>Let's Build Your Brand Together.</h2>
+
+      <p>
+        Have an idea? Let's turn it into something people remember.
+      </p>
+
+      <a href="mailto:adaniqmedia@gmail.com" class="btn btn-primary">
+        Start a Conversation →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact-box">
+
+        <h2>Let's Work Together</h2>
+
+        <p>
+          Tell us about your project and we'll get back to you.
+        </p>
+
+        <a
+          href="mailto:adaniqmedia@gmail.com"
+          class="btn btn-primary"
+        >
+          📩 Email Us
+        </a>
+
+        <div class="contact-info">
+
+          <a href="mailto:adaniqmedia@gmail.com">
+            adaniqmedia@gmail.com
+          </a>
+
+          <a
+            href="https://instagram.com/adaniqmedia07"
+            target="_blank"
+          >
+            Instagram @adaniqmedia07
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 <strong>Adaniq Media</strong>. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
